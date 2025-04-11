@@ -1,0 +1,140 @@
+.cart {
+	&-header {
+		padding-top: 45px;
+
+		padding-bottom: 45px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		h4 {
+			font-family: var(--font-family);
+			font-weight: 700;
+			font-size: 32px;
+			color: #000;
+		}
+	}
+
+	p {
+		font-family: var(--font-family);
+		font-weight: 700;
+		font-size: 18px;
+		color: #000;
+	}
+
+	ul {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 40px;
+		padding-bottom: 45px;
+	}
+
+	&-item {
+		border: 1px solid #cacaca;
+		border-radius: 20px;
+		// width: 325px;
+		// height: 119px;
+		background: #fff;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 30px;
+
+		img {
+			width: 200px;
+			height: 200px;
+		}
+
+		h3 {
+			font-family: var(--font-family);
+			font-weight: 400;
+			font-size: 22px;
+			color: #000;
+			padding-bottom: 8px;
+			max-width: 280px;
+		}
+
+
+
+		button {
+			border: 1px solid #cacaca;
+			border-radius: 20px;
+			width: 70px;
+			height: 70px;
+			background: #fff;
+
+			cursor: pointer;
+
+			svg {
+				width: 20px;
+				height: 20px;
+			}
+		}
+	}
+
+	&-price {
+		padding-bottom: 45px;
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+
+		b {
+			font-family: var(--font-family);
+			font-weight: 400;
+			font-size: 24px;
+			color: #000;
+		}
+
+		a {
+			font-family: var(--font-family);
+			font-weight: 600;
+			font-size: 16px;
+			text-align: center;
+			color: #fff;
+
+			border-radius: 18px;
+			width: 100%;
+			padding: 18px 0;
+			background: #9dd458;
+		}
+
+		&__total {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		&__tax {
+			display: flex;
+			justify-content: space-between;
+		}
+	}
+
+
+	&__clear {
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+
+		span {
+			display: inline-block;
+			margin-left: 7px;
+			color: #b6b6b6;
+			font-size: 18px;
+		}
+
+
+
+
+		&:hover {
+			svg {
+				path {
+					stroke: darken($color: #b6b6b6, $amount: 50);
+				}
+			}
+
+			span {
+				color: darken($color: #b6b6b6, $amount: 50);
+			}
+		}
+	}
+}

@@ -3,8 +3,11 @@ import './header.scss'
 import logo from '../../assets/logo.svg'
 import HeaderItem, { HeaderItemType } from './headerItem'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { selectCart } from '../../redux/cart/selectors'
 
 const Header: React.FC = () => {
+	const {totalPrice} = useSelector(selectCart)
 	const headerItemDb = [
 		{
 			id: 0,
@@ -30,7 +33,7 @@ const Header: React.FC = () => {
 				<ul>
 					<Link to='cart' className='header-right__link'>
 						<img src='https://i.postimg.cc/MpNG11sx/cart.png' alt='img' />
-						<p>0 руб</p>
+						<p>{totalPrice} руб</p>
 					</Link>
 					{headerItemDb.map((item: HeaderItemType, i: number) => (
 						<HeaderItem {...item} key={i} />

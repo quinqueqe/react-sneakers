@@ -3,13 +3,13 @@ import { useSelector, useDispatch } from 'react-redux'
 // import { selectSneakers } from '../../redux/sneakers/selectors'
 // import { setAddCart } from '../../redux/sneakers/slice'
 import { SneakersItem } from '../../redux/sneakers/types'
-import { setItem } from '../../redux/cart/slice'
+import { deleteItem, setItem } from '../../redux/cart/slice'
 import { selectCart } from '../../redux/cart/selectors'
 
 const SneakersCard: React.FC<SneakersItem> = ({ id, img, title, price }) => {
 	const { items } = useSelector(selectCart)
 	const item = items.find(obj => obj.id === id)
-	const added = item?.added || false; // не понятный код на данном этапе
+	const added = item?.added || false // не понятный код на данном этапе
 
 	const dispatch = useDispatch()
 
@@ -22,6 +22,9 @@ const SneakersCard: React.FC<SneakersItem> = ({ id, img, title, price }) => {
 		}
 		// dispatch(setAddCart(!addCart))
 		dispatch(setItem(item))
+		if (items.find(obj => obj.id === id)) {
+			dispatch(deleteItem(id))
+		}
 	}
 	return (
 		<li className='sneakers-card'>
