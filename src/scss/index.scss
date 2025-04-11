@@ -1,1 +1,28 @@
 @import './_normalize';
+
+:root {
+	--font-family: "Inter", sans-serif;
+}
+
+body {
+	font-family: var(--font-family);
+	background: #e7f6ff;
+}
+
+.container {
+	max-width: 1550px;
+
+	margin: 0 auto;
+	padding: 0 60px;
+}
+
+.containerHeader {
+	max-width: 1550px;
+	margin: 0 auto;
+	padding: 0px 60px 0px 45px;
+}
+
+.sect {
+	box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.04);
+	background: #fff;
+}

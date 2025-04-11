@@ -1,8 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
-import initial from './initial/slice'
+import sneakers from './sneakers/slice'
+import cart from './cart/slice'
 
 export const store = configureStore({
 	reducer: {
-		initial,
+		sneakers,
+		cart,
 	},
 })
+
+
+

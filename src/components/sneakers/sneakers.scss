@@ -1,0 +1,130 @@
+.sneakers {
+	&-title {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		h5 {
+			font-family: var(--font-family);
+			font-weight: 700;
+			font-size: 32px;
+			color: #000;
+		}
+	}
+
+	&-input {
+		position: relative;
+
+		&-search {
+			position: absolute;
+			top: 15px;
+			left: 18px;
+
+		}
+
+		&-close {
+			position: absolute;
+			width: 35px;
+			height: 35px;
+			top: 8px;
+			left: 255px;
+			cursor: pointer;
+		}
+
+		input {
+			border: 1px solid #cacaca;
+			border-radius: 10px;
+			width: 550px;
+			padding: 15px 0;
+			padding-left: 46px;
+
+
+			font-family: var(--font-family);
+			font-weight: 400;
+			font-size: 14px;
+			color: rgb(97, 97, 97);
+		}
+	}
+
+
+
+	ul {
+		padding-top: 40px;
+		padding-bottom: 40px;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 40px;
+	}
+
+	&-card {
+		padding: 30px;
+		padding-top: 0;
+		border: 1px solid #cacaca;
+		border-radius: 40px;
+		// width: 210px;
+		// height: 260px;
+		background: #fff;
+
+		h4 {
+			font-family: var(--font-family);
+			font-weight: 400;
+			font-size: 26px;
+			color: #000;
+			padding-top: 14px;
+			padding-bottom: 14px;
+			max-width: 266px;
+		}
+
+		h6 {
+			font-family: var(--font-family);
+			font-weight: 500;
+			font-size: 16px;
+			text-transform: uppercase;
+			color: #bdbdbd;
+			padding-bottom: 2px;
+		}
+
+		h2 {
+			font-family: var(--font-family);
+			font-weight: 700;
+			font-size: 20px;
+			color: #000;
+		}
+
+		&-bottom {
+			display: flex;
+			// gap: 40px;
+			justify-content: space-between;
+			align-items: center;
+
+			&-btn {
+				border: 1px solid #cacaca;
+				border-radius: 20px;
+				width: 50px;
+				height: 50px;
+				background: linear-gradient(180deg, #89f09c 0%, #3cc755 100%);
+				cursor: pointer;
+
+				svg {
+					width: 20px;
+					height: 20px;
+				}
+
+				&__disabled {
+					border: 1px solid #cacaca;
+					border-radius: 20px;
+					width: 50px;
+					height: 50px;
+					background: #fff;
+
+					cursor: pointer;
+
+					svg {
+						width: 20px;
+						height: 20px;
+					}
+				}
+			}
+		}
+	}
+}
