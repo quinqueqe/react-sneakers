@@ -72,7 +72,7 @@ const Cart: React.FC = () => {
 					</ul>
 					<div className='cart-price'>
 						<div className='cart-price__total'>
-							<b>В сумме:</b>
+							<b>Итого:</b>
 							<p>{totalPrice} руб</p>
 						</div>
 						<div className='cart-price__tax'>
@@ -80,7 +80,7 @@ const Cart: React.FC = () => {
 							<p>{taxPrice} руб</p>
 						</div>
 						<div className='cart-price__total'>
-							<b>Итого:</b>
+							<b>К оплате после вычета налога:</b>
 							<p>{endTotalPrice} руб</p>
 						</div>
 						<a href='#'>Оформить заказ</a>

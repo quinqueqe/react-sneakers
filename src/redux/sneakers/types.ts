@@ -8,7 +8,7 @@ export type SneakersItem = {
 	id: string
 	img: string
 	title: string
-	price: string
+	price: number
 }
 
 export enum Status {

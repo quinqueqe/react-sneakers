@@ -1,9 +1,9 @@
 import React from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import MainLayout from './layouts/MainLayout'
-import Home from './pages/home'
-import Cart from './pages/cart'
 import Bookmarks from './pages/bookmarks'
+import Cart from './pages/cart'
+import Home from './pages/home'
 import Profile from './pages/profile'
 
 const App: React.FC = () => {

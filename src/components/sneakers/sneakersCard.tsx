@@ -1,13 +1,11 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-// import { selectSneakers } from '../../redux/sneakers/selectors'
-// import { setAddCart } from '../../redux/sneakers/slice'
 import { SneakersItem } from '../../redux/sneakers/types'
-import { deleteItem, setItem } from '../../redux/cart/slice'
+import { deleteItem, setItem, setTotalPrice } from '../../redux/cart/slice'
 import { selectCart } from '../../redux/cart/selectors'
 
 const SneakersCard: React.FC<SneakersItem> = ({ id, img, title, price }) => {
-	const { items } = useSelector(selectCart)
+	const { items, totalPrice } = useSelector(selectCart)
 	const item = items.find(obj => obj.id === id)
 	const added = item?.added || false // не понятный код на данном этапе
 
@@ -20,10 +18,11 @@ const SneakersCard: React.FC<SneakersItem> = ({ id, img, title, price }) => {
 			title,
 			price,
 		}
-		// dispatch(setAddCart(!addCart))
+		dispatch(setTotalPrice(totalPrice + price))
 		dispatch(setItem(item))
 		if (items.find(obj => obj.id === id)) {
 			dispatch(deleteItem(id))
+			dispatch(setTotalPrice(totalPrice - price))
 		}
 	}
 	return (
