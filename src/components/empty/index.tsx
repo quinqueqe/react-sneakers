@@ -5,7 +5,7 @@ import { EmptyType } from './types'
 
 const Empty: React.FC<EmptyType> = ({ img, title, firstDesc, secondDesc }) => {
 	return (
-		<div className='empty sect container '>
+		<div className='empty  container '>
 			<div className='empty__content'>
 				<img src={img} alt='img' />
 				<h2 className='empty__content-title'>{title}</h2>
