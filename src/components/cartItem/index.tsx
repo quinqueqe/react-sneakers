@@ -1,7 +1,7 @@
 import React from 'react'
 import { SneakersItem } from '../../redux/sneakers/types'
 import { useDispatch } from 'react-redux'
-import { deleteItem } from '../../redux/cart/slice'
+import { deleteItemCart } from '../../redux/cart/slice'
 
 const CartItem: React.FC<SneakersItem> = ({ id, img, title, price }) => {
 	const dispatch = useDispatch()
@@ -15,7 +15,7 @@ const CartItem: React.FC<SneakersItem> = ({ id, img, title, price }) => {
 			<button
 				onClick={() => {
 					if (window.confirm('Вы действительно хотите удалить этот товар?')) {
-						dispatch(deleteItem(id))
+						dispatch(deleteItemCart(id))
 					}
 				}}
 			>

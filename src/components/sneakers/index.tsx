@@ -15,7 +15,7 @@ const Sneakers: React.FC = () => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [inputValue])
 	return (
-		<div className='sneakers container sect'>
+		<div className='sneakers container sect sectMain'>
 			<div className='sneakers-title'>
 				<h5>Все кроссовки</h5>
 				<SneakersInput />

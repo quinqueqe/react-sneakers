@@ -1,5 +1,5 @@
 export interface CartState {
-	items: CartItem[]
+	itemsCart: CartItem[]
 	totalPrice: number
 }
 
@@ -8,5 +8,5 @@ export type CartItem = {
 	img: string
 	title: string
 	price: number
-	added: boolean
+	addedCart: boolean
 }

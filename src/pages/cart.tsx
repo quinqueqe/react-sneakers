@@ -6,12 +6,12 @@ import CartEmpty from '../components/cartEmpty'
 import { clearCart } from '../redux/cart/slice'
 
 const Cart: React.FC = () => {
-	const { items, totalPrice } = useSelector(selectCart)
+	const { itemsCart, totalPrice } = useSelector(selectCart)
 	const dispatch = useDispatch()
 	const taxPrice = totalPrice * 0.05
 	const endTotalPrice = taxPrice + totalPrice
 	return (
-		<div className='cart sect container'>
+		<div className='cart sect container sectMain'>
 			{totalPrice > 0 ? (
 				<>
 					<div className='cart-header'>
@@ -66,7 +66,7 @@ const Cart: React.FC = () => {
 						</div>
 					</div>
 					<ul className='cart-list'>
-						{items.map((item, i) => (
+						{itemsCart.map((item, i) => (
 							<CartItem {...item} key={i} />
 						))}
 					</ul>

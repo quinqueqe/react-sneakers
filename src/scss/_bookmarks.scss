@@ -1,0 +1,40 @@
+.bookmarks {
+	// border-radius: 0px 0px 20px 20px;
+	&--title {
+		padding-top: 40px;
+		padding-bottom: 40px;
+		display: flex;
+		gap: 20px;
+		align-items: center;
+		button {
+			border: 1px solid #cacaca;
+			border-radius: 20px;
+			width: 50px;
+			height: 50px;
+			background: #fff;
+
+			cursor: pointer;
+
+			svg {
+				width: 20px;
+				height: 20px;
+			}
+		}
+
+		h3 {
+			font-family: var(--font-family);
+			font-weight: 700;
+			font-size: 32px;
+			color: #000;
+		}
+	}
+
+	&-content {
+		padding-top: 40px;
+		padding-bottom: 40px;
+		
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 40px;
+	}
+}

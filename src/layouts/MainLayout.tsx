@@ -5,8 +5,10 @@ import Header from '../components/header'
 const MainLayout: React.FC = () => {
 	return (
 		<>
-			<Header />
-			<Outlet />
+			<div className='wrapper'>
+				<Header />
+				<Outlet />
+			</div>
 		</>
 	)
 }

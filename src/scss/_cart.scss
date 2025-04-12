@@ -22,7 +22,7 @@
 		color: #000;
 	}
 
-	ul {
+	&-list {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: 40px;
