@@ -1,5 +1,6 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { BookmarksState } from './types'
+import { SneakersItem } from '../sneakers/types'
 
 const initialState: BookmarksState = {
 	itemsBs: [],
@@ -9,7 +10,7 @@ export const bookmarksSlice = createSlice({
 	name: 'bookmarks',
 	initialState,
 	reducers: {
-		setItemsBs(state, action) {
+		setItemsBs(state, action: PayloadAction<SneakersItem>) {
 			const findItem = state.itemsBs.find(obj => obj.id === action.payload.id)
 			if (findItem) {
 				findItem.addedBs = true

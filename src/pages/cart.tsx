@@ -1,6 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
+import { useAppDispatch } from '../hooks/useAppDispatch'
 import CartItem from '../components/cartItem'
 import CartEmpty from '../components/cartEmpty'
 import { selectCart } from '../redux/cart/selectors'
@@ -8,7 +9,7 @@ import { clearCart } from '../redux/cart/slice'
 
 
 const Cart: React.FC = () => {
-	const dispatch = useDispatch()
+	const dispatch = useAppDispatch()
 	const navigate = useNavigate()
 	const { itemsCart, totalPrice } = useSelector(selectCart)
 	const taxPrice = totalPrice * 0.05

@@ -1,13 +1,12 @@
 import React from 'react'
 import ReactPaginate from 'react-paginate'
-import { useDispatch } from 'react-redux'
+import { useAppDispatch } from '../../hooks/useAppDispatch'
 import styles from './pagination.module.scss'
 import { setCurrentPage } from '../../redux/sneakers/slice'
-import { useSelector } from 'react-redux'
-import { selectSneakers } from '../../redux/sneakers/selectors'
+
 
 const Pagination: React.FC = () => {
-	const dispatch = useDispatch()
+	const dispatch = useAppDispatch()
 	return (
 		<>
 			<ReactPaginate

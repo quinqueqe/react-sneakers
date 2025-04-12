@@ -1,10 +1,10 @@
 import React from 'react'
 import { SneakersItem } from '../../redux/sneakers/types'
-import { useDispatch } from 'react-redux'
+import { useAppDispatch } from '../../hooks/useAppDispatch'
 import { deleteItemCart } from '../../redux/cart/slice'
 
 const CartItem: React.FC<SneakersItem> = ({ id, img, title, price }) => {
-	const dispatch = useDispatch()
+	const dispatch = useAppDispatch()
 	return (
 		<li className='cart-item'>
 			<img src={img} alt='img' />

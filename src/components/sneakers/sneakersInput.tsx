@@ -1,15 +1,16 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
+import { useAppDispatch } from '../../hooks/useAppDispatch'
 import { setInputValue } from '../../redux/sneakers/slice'
 import search from '../../assets/search.svg'
 import { selectSneakers } from '../../redux/sneakers/selectors'
 
 const SneakersInput: React.FC = () => {
 	const { inputValue } = useSelector(selectSneakers)
-	const dispatch = useDispatch()
+	const dispatch = useAppDispatch()
 
 	const inputRef = React.useRef<HTMLInputElement>(null)
-	const onChangeValue = (e: any) => {
+	const onChangeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
 		dispatch(setInputValue(e.target.value))
 	}
 	const clearInput = () => {

@@ -1,5 +1,6 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
+import { useAppDispatch } from '../../hooks/useAppDispatch'
 import { SneakersItem } from '../../redux/sneakers/types'
 import {
 	deleteItemCart,
@@ -19,7 +20,7 @@ const SneakersCard: React.FC<SneakersItem> = ({ id, img, title, price }) => {
 	const itemBs = itemsBs.find(obj => obj.id === id)
 	const addedBs = itemBs?.addedBs || false
 
-	const dispatch = useDispatch()
+	const dispatch = useAppDispatch()
 
 	const pushItemCart = (id: string) => {
 		const item: SneakersItem = {

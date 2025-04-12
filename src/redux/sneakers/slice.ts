@@ -19,7 +19,7 @@ export const sneakersSlice = createSlice({
 		setItems(state, action: PayloadAction<SneakersItem[]>) {
 			state.items = action.payload
 		},
-		setCurrentPage(state, action) {
+		setCurrentPage(state, action: PayloadAction<number>) {
 			state.currentPage = action.payload
 		},
 	},
