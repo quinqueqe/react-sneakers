@@ -13,7 +13,7 @@ const Sneakers: React.FC = () => {
 	const dispatch = useAppDispatch()
 	const { inputValue, items, currentPage, status } = useSelector(selectSneakers)
 	React.useEffect(() => {
-		dispatch(fetchSneakers({ currentPage }))
+		dispatch(fetchSneakers({ currentPage, inputValue }))
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [inputValue, currentPage])
 

@@ -14,6 +14,7 @@ export type SneakersItem = {
 
 export type FetchSneakersArgs = {
 	currentPage: number
+	inputValue: string
 }
 
 export enum Status {
