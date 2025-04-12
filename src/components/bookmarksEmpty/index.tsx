@@ -8,7 +8,7 @@ const BookmarksEmpty: React.FC = () => {
 			img={smile}
 			title='Закладок нет :('
 			firstDesc=''
-			secondDesc='Закладок нет :('
+			secondDesc='Вы ничего не добавляли в закладки'
 		/>
 	)
 }

@@ -12,6 +12,10 @@
 		}
 	}
 
+	&-pagination {
+		padding-bottom: 40px;
+	}
+
 	&-input {
 		position: relative;
 
@@ -27,7 +31,7 @@
 			width: 35px;
 			height: 35px;
 			top: 8px;
-			left: 255px;
+			right: 10px;
 			cursor: pointer;
 		}
 

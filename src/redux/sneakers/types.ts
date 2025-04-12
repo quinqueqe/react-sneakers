@@ -2,6 +2,7 @@ export interface SneakersState {
 	inputValue: string
 	status: string
 	items: SneakersItem[]
+	currentPage: number
 }
 
 export type SneakersItem = {
@@ -9,6 +10,10 @@ export type SneakersItem = {
 	img: string
 	title: string
 	price: number
+}
+
+export type FetchSneakersArgs = {
+	currentPage: number
 }
 
 export enum Status {

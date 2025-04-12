@@ -2,6 +2,7 @@ import React from 'react'
 import './sneakers.scss'
 import SneakersInput from './sneakersInput'
 import SneakersCard from './sneakersCard'
+import Pagination from '../pagination'
 import { fetchSneakers } from '../../redux/sneakers/asyncActions'
 import { useSelector } from 'react-redux'
 import { useAppDispatch } from '../../hooks/useAppDispatch'
@@ -9,11 +10,11 @@ import { selectSneakers } from '../../redux/sneakers/selectors'
 
 const Sneakers: React.FC = () => {
 	const dispatch = useAppDispatch()
-	const { inputValue, items } = useSelector(selectSneakers)
+	const { inputValue, items, currentPage } = useSelector(selectSneakers)
 	React.useEffect(() => {
-		dispatch(fetchSneakers())
+		dispatch(fetchSneakers({currentPage}))
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [inputValue])
+	}, [inputValue, currentPage])
 	return (
 		<div className='sneakers container sect sectMain'>
 			<div className='sneakers-title'>
@@ -25,6 +26,9 @@ const Sneakers: React.FC = () => {
 					<SneakersCard {...item} key={i} />
 				))}
 			</ul>
+			<div className='sneakers-pagination'>
+				<Pagination />
+			</div>
 		</div>
 	)
 }

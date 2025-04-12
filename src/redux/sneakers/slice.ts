@@ -6,6 +6,7 @@ const initialState: SneakersState = {
 	inputValue: '',
 	status: Status.LOADING,
 	items: [],
+	currentPage: 1,
 }
 
 export const sneakersSlice = createSlice({
@@ -18,9 +19,12 @@ export const sneakersSlice = createSlice({
 		setItems(state, action: PayloadAction<SneakersItem[]>) {
 			state.items = action.payload
 		},
+		setCurrentPage(state, action) {
+			state.currentPage = action.payload
+		},
 	},
 	extraReducers: builder => {
-		builder.addCase(fetchSneakers.pending, (state) => {
+		builder.addCase(fetchSneakers.pending, state => {
 			state.items = []
 			state.status = Status.LOADING
 		})
@@ -28,12 +32,12 @@ export const sneakersSlice = createSlice({
 			state.items = action.payload
 			state.status = Status.SUCCESS
 		})
-		builder.addCase(fetchSneakers.rejected, (state) => {
+		builder.addCase(fetchSneakers.rejected, state => {
 			state.items = []
 			state.status = Status.ERROR
 		})
 	},
 })
 
-export const { setInputValue, setItems } = sneakersSlice.actions
+export const { setInputValue, setItems, setCurrentPage } = sneakersSlice.actions
 export default sneakersSlice.reducer

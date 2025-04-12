@@ -1,15 +1,23 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux'
 import CartItem from '../components/cartItem'
-import { selectCart } from '../redux/cart/selectors'
 import CartEmpty from '../components/cartEmpty'
+import { selectCart } from '../redux/cart/selectors'
 import { clearCart } from '../redux/cart/slice'
 
+
 const Cart: React.FC = () => {
-	const { itemsCart, totalPrice } = useSelector(selectCart)
 	const dispatch = useDispatch()
+	const navigate = useNavigate()
+	const { itemsCart, totalPrice } = useSelector(selectCart)
 	const taxPrice = totalPrice * 0.05
 	const endTotalPrice = taxPrice + totalPrice
+
+	const placeAnOrder = () => {
+		dispatch(clearCart())
+		navigate('/order')
+	}
 	return (
 		<div className='cart sect container sectMain'>
 			{totalPrice > 0 ? (
@@ -83,7 +91,9 @@ const Cart: React.FC = () => {
 							<b>К оплате после вычета налога:</b>
 							<p>{endTotalPrice} руб</p>
 						</div>
-						<a href='#'>Оформить заказ</a>
+						<a href='#' onClick={() => placeAnOrder()}>
+							Оформить заказ
+						</a>
 					</div>
 				</>
 			) : (
