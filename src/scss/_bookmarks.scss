@@ -15,6 +15,21 @@
 
 			cursor: pointer;
 
+			&:hover {
+				background: #fff;
+				color: #9dd458;
+				border: 1px solid #9dd458;
+				transition: 0.3s all;
+
+				svg {
+
+path {
+	stroke: #9dd458;
+
+}
+				}
+			}
+
 			svg {
 				width: 20px;
 				height: 20px;

@@ -2,6 +2,7 @@ import React from 'react'
 import './stan.scss'
 import stanDisney from '../../assets/stan-disney.png'
 import slide from '../../assets/stan-slide.png'
+// import Slider from '../slider'
 
 const Stan: React.FC = () => {
 	return (
@@ -19,7 +20,8 @@ const Stan: React.FC = () => {
 						<a href='/'>Купить</a>
 					</div>
 					<div className='stan-slider'>
-						<img src={slide} alt='img' />
+						{/* <Slider /> */}
+						<img src={slide} alt="img" />
 					</div>
 				</div>
 			</div>

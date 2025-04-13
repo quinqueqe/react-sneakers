@@ -65,9 +65,19 @@
 
 			cursor: pointer;
 
+			&:hover {
+				border: 1px solid #8bb43c;
+				transition: 0.3s all;
+
+			}
+
 			svg {
 				width: 20px;
 				height: 20px;
+
+				path {
+					fill: #8bb43c;
+				}
 			}
 		}
 	}
@@ -86,9 +96,11 @@
 		}
 
 		a {
+			border: 1px solid #ffff;
+
 			font-family: var(--font-family);
 			font-weight: 600;
-			font-size: 16px;
+			font-size: 20px;
 			text-align: center;
 			color: #fff;
 
@@ -96,6 +108,14 @@
 			width: 100%;
 			padding: 18px 0;
 			background: #9dd458;
+
+			&:hover {
+				background: #fff;
+				color: #9dd458;
+				border: 1px solid #9dd458;
+				transition: 0.3s all;
+
+			}
 		}
 
 		&__total {
