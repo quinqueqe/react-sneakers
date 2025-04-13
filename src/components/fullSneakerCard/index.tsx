@@ -1,4 +1,5 @@
 import React from 'react'
+import './fullSneakerCard.scss'
 import { useSelector } from 'react-redux'
 import { useAppDispatch } from '../../hooks/useAppDispatch'
 import { selectBookmarks } from '../../redux/bookmarks/selectors'
@@ -11,9 +12,8 @@ import {
 } from '../../redux/cart/slice'
 import { SneakersItem } from '../../redux/sneakers/types'
 import { Link } from 'react-router-dom'
-import { fetchSneaker } from '../../redux/fullSneaker/asyncActions'
 
-const SneakersCard: React.FC<SneakersItem> = ({ id, img, title, price }) => {
+const FullSneakerCard: React.FC<SneakersItem> = ({ id, img, title, price }) => {
 	const { itemsCart, totalPrice } = useSelector(selectCart)
 	const itemCart = itemsCart.find(obj => obj.id === id)
 	const addedCart = itemCart?.addedCart || false // не понятный код на данном этапе
@@ -52,36 +52,17 @@ const SneakersCard: React.FC<SneakersItem> = ({ id, img, title, price }) => {
 		}
 	}
 
-	const pushItemFullSs = (id: string) => {
-		const item = {
-			id,
-			img,
-			title,
-			price,
-		}
-		dispatch(fetchSneaker(item))
-	}
 	return (
-		<li className='sneakers-card'>
-			<Link
-				onClick={() => {
-					window.scrollTo({
-						top: 0,
-					})
-					pushItemFullSs(id)
-				}}
-				to={`/sneaker/${id}`}
-			>
-				<img src={img} alt='img' />
-				<h4>{title}</h4>
-			</Link>
-			<div className='sneakers-card-bottom'>
+		<li className='fullsneakers-card sneakers-card'>
+			<img src={img} alt='img' />
+			<h4>{title}</h4>
+			<div className='fullsneakers-card-bottom sneakers-card-bottom'>
 				<button
 					onClick={() => pushItemBookmarks(id)}
 					className={
 						addedBs
-							? 'sneakers-card-bottom-bookmarks-true'
-							: 'sneakers-card-bottom-bookmarks-false'
+							? 'fullsneakers-card-bottom-bookmarks-true sneakers-card-bottom-bookmarks-true'
+							: 'fullsneakers-card-bottom-bookmarks-false sneakers-card-bottom-bookmarks-false'
 					}
 				>
 					<svg
@@ -106,8 +87,8 @@ const SneakersCard: React.FC<SneakersItem> = ({ id, img, title, price }) => {
 					<button
 						className={
 							addedCart
-								? 'sneakers-card-bottom-btn-true'
-								: 'sneakers-card-bottom-btn-false'
+								? 'fullsneakers-card-bottom-btn-true sneakers-card-bottom-btn-true'
+								: 'fullsneakers-card-bottom-btn-false sneakers-card-bottom-btn-false'
 						}
 						onClick={() => pushItemCart(id)}
 					>
@@ -178,8 +159,9 @@ const SneakersCard: React.FC<SneakersItem> = ({ id, img, title, price }) => {
 					</button>
 				</div>
 			</div>
+			
 		</li>
 	)
 }
 
-export default SneakersCard
+export default FullSneakerCard

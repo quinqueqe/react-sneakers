@@ -1,0 +1,103 @@
+.fullsneakers {
+	padding: 0 100px;
+	padding-bottom: 40px;
+
+
+&-content {
+	padding-top: 40px;
+	padding-bottom: 20px;
+}
+
+	&-card {
+		padding: 0;
+		border: none;
+
+		img {
+			width: 500px;
+			height: 400px;
+		}
+
+		h4 {
+			max-width: initial;
+			width: 100%;
+			font-size: 30px;
+		}
+
+		h6 {
+			font-size: 20px;
+		}
+
+		h2 {
+			font-size: 25px;
+		}
+
+
+		&-bottom {
+			// justify-content: initial;
+			align-items: end;
+
+			&-bookmarks {
+				&-true {
+					left: 0;
+					
+					width: 70px;
+					height: 70px;
+				}
+
+				&-false {
+					left: 0;
+					width: 70px;
+					height: 70px;
+				}
+			}
+
+			&-btn {
+				&-true {
+					width: 100px;
+					height: 100px;
+				}
+
+				&-false {
+					width: 100px;
+					height: 100px;
+				}
+			}
+		}
+
+	}
+}
+
+.fullsneakers-back {
+	
+	width: 100% !important;
+	border: 1px solid #ffff;
+
+	font-family: var(--font-family);
+	font-weight: 600;
+	font-size: 20px;
+	text-align: center;
+
+
+
+	border-radius: 18px;
+	padding: 18px 0;
+	
+	background: #9dd458;
+
+	&:hover {
+		background: #fff;
+		color: #9dd458;
+		border: 1px solid #9dd458;
+		transition: 0.3s all;
+
+		.fullsneakers-back {
+			margin-bottom: 40px;
+
+		}
+
+	}
+
+	&-btn {
+		color: #fff;
+	}
+}
