@@ -51,10 +51,20 @@
 	}
 
 
+&-wrapper {
+	padding-top: 40px;
+		padding-bottom: 40px;
+		
+}
+
+&-wrapper-skeleton {
+	display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 40px;
+}
 
 	&-content {
-		padding-top: 40px;
-		padding-bottom: 40px;
+		
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		gap: 40px;

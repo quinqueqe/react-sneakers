@@ -5,6 +5,7 @@ import Bookmarks from './pages/bookmarks'
 import Cart from './pages/cart'
 import Order from './pages/order'
 import Home from './pages/home'
+import NotFound from './pages/notFound'
 
 const App: React.FC = () => {
 	return (
@@ -15,6 +16,7 @@ const App: React.FC = () => {
 					<Route path='cart' element={<Cart />} />
 					<Route path='order' element={<Order />} />
 					<Route path='bookmarks' element={<Bookmarks />} />
+					<Route path='*' element={<NotFound />} />
 				</Route>
 			</Routes>
 		</>

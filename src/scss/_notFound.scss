@@ -1,0 +1,47 @@
+.notFound {
+	max-width: 550px;
+	text-align: center;
+	margin: 0 auto;
+	padding: 100px 0;
+
+	span {
+		font-size: 67px;
+	}
+
+	h1 {
+		padding-top: 5px;
+	}
+
+	p {
+		padding-top: 5px;
+		font-size: 22px;
+	}
+}
+
+.notFound-btn {
+	button {
+		border: 1px solid #ffff;
+
+		margin-top: 40px;
+		font-family: var(--font-family);
+		font-weight: 600;
+		font-size: 18px;
+		text-align: center;
+		color: #fff;
+
+		border-radius: 18px;
+		// width: 245px;
+		padding: 20px 50px;
+
+		background: #9dd458;
+		cursor: pointer;
+
+		&:hover {
+			background: #fff;
+			color: #9dd458;
+			border: 1px solid #9dd458;
+			transition: 0.3s all;
+
+		}
+	}
+}
