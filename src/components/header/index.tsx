@@ -9,7 +9,7 @@ const Header: React.FC = () => {
 	const { totalPrice } = useSelector(selectCart)
 	return (
 		<header className='header containerHeader sect'>
-			<Link to='' className='header-left'>
+			<Link to='/react-sneakers' className='header-left'>
 				<img src={logo} alt='img' />
 				<div>
 					<h3>REACT SNEAKERS</h3>

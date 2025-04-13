@@ -7,6 +7,15 @@ import { fetchSneaker } from '../../redux/fullSneaker/asyncActions'
 
 const CartItem: React.FC<SneakersItem> = ({ id, img, title, price }) => {
 	const dispatch = useAppDispatch()
+	const pushItemFullSs = (id: string) => {
+			const item = {
+				id,
+				img,
+				title,
+				price,
+			}
+			dispatch(fetchSneaker(item))
+		}
 	return (
 		<li className='cart-item'>
 			<Link onClick={() => {
@@ -14,8 +23,8 @@ const CartItem: React.FC<SneakersItem> = ({ id, img, title, price }) => {
 						top: 0,
 						behavior: 'smooth', // Плавная прокрутка
 					})
-					fetchSneaker({id})
-				}} to={`/sneaker/${id}`}>
+					pushItemFullSs(id)
+				}} to={`/react-sneakers/sneaker/${id}`}>
 				<img src={img} alt='img' />
 			</Link>
 			<div>

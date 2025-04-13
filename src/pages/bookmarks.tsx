@@ -14,7 +14,7 @@ const Bookmarks: React.FC = () => {
 			) : (
 				<>
 					<div className='bookmarks--title'>
-						<Link to='/'>
+						<Link to='/react-sneakers'>
 							<button>
 								<svg
 									width='15'

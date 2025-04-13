@@ -12,12 +12,12 @@ const App: React.FC = () => {
 	return (
 		<>
 			<Routes>
-				<Route path='/' element={<MainLayout />}>
+				<Route path='/react-sneakers' element={<MainLayout />}>
 					<Route path='' element={<Home />} />
 					<Route path='cart' element={<Cart />} />
 					<Route path='order' element={<Order />} />
 					<Route path='bookmarks' element={<Bookmarks />} />
-					<Route path='sneaker/:id' element={<FullSneaker />} />
+					<Route path='/react-sneakers/sneaker/:id' element={<FullSneaker />} />
 					<Route path='*' element={<NotFound />} />
 				</Route>
 			</Routes>

@@ -11,7 +11,7 @@ const Empty: React.FC<EmptyType> = ({ img, title, firstDesc, secondDesc }) => {
 				<h2 className='empty__content-title'>{title}</h2>
 				<h5 className='empty__content-desc'>{firstDesc}</h5>
 				<h5 className='empty__content-desc'>{secondDesc}</h5>
-				<Link to='/' className='empty-btn'>
+				<Link to='/react-sneakers' className='empty-btn'>
 					Вернуться назад
 				</Link>
 			</div>

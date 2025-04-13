@@ -90,7 +90,7 @@ const Cart: React.FC = () => {
 							<b>К оплате после вычета налога:</b>
 							<p>{endTotalPrice} руб</p>
 						</div>
-						<Link to='/order' onClick={() => placeAnOrder()}>
+						<Link to='/react-sneakers/order' onClick={() => placeAnOrder()}>
 							Оформить заказ
 						</Link>
 					</div>

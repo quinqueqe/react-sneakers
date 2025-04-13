@@ -17,7 +17,7 @@ const Stan: React.FC = () => {
 							Stan Smith<span>,</span>
 						</h4>
 						<h5>Forever!</h5>
-						<a href='/'>Купить</a>
+						<a href='#sneakers'>Купить</a>
 					</div>
 					<div className='stan-slider'>
 						{/* <Slider /> */}

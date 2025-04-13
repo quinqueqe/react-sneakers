@@ -18,7 +18,7 @@ const FullSneaker: React.FC = () => {
 				)}
 			</div>
 			{/* <Skeleton /> */}
-			<Link to='/' className='fullsneakers-back-btn'>
+			<Link to='/react-sneakers' className='fullsneakers-back-btn'>
 				<div className='fullsneakers-back'>Вернуться на главную страницу</div>
 			</Link>
 		</div>

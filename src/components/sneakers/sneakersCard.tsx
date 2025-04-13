@@ -70,7 +70,7 @@ const SneakersCard: React.FC<SneakersItem> = ({ id, img, title, price }) => {
 					})
 					pushItemFullSs(id)
 				}}
-				to={`/sneaker/${id}`}
+				to={`/react-sneakers/sneaker/${id}`}
 			>
 				<img src={img} alt='img' />
 				<h4>{title}</h4>

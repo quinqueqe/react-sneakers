@@ -25,7 +25,7 @@ const Sneakers: React.FC = () => {
 				<h5>Все кроссовки</h5>
 				<SneakersInput />
 			</div>
-			<div className='sneakers-wrapper'>
+			<div className='sneakers-wrapper' id='sneakers'>
 				{status === 'loading' ? (
 			<div className='sneakers-wrapper-skeleton'>
 				{skelet}
