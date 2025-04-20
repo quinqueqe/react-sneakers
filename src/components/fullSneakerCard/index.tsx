@@ -1,28 +1,22 @@
 import React from 'react'
 import './fullSneakerCard.scss'
-import { useSelector } from 'react-redux'
-import { useAppDispatch } from '../../hooks/useAppDispatch'
-import { selectBookmarks } from '../../redux/bookmarks/selectors'
-import { deleteItemBs, setItemsBs } from '../../redux/bookmarks/slice'
-import { selectCart } from '../../redux/cart/selectors'
-import {
-	deleteItemCart,
-	setItemsCart,
-	setTotalPrice,
-} from '../../redux/cart/slice'
-import { SneakersItem } from '../../redux/sneakers/types'
-import { Link } from 'react-router-dom'
+import { useCart, SneakersItem, useBookmarks } from '../../store'
 
 const FullSneakerCard: React.FC<SneakersItem> = ({ id, img, title, price }) => {
-	const { itemsCart, totalPrice } = useSelector(selectCart)
+	const { deleteItemCart, setItemsCart, setTotalPrice } = useCart(
+		state => state
+	)
+	const itemsCart = useCart(state => state.itemsCart)
+	const totalPrice = useCart(state => state.totalPrice)
 	const itemCart = itemsCart.find(obj => obj.id === id)
 	const addedCart = itemCart?.addedCart || false // не понятный код на данном этапе
 
-	const { itemsBs } = useSelector(selectBookmarks)
+	const itemsBs = useBookmarks(state => state.itemsBs)
+	const { deleteItemBs, setItemsBs } = useBookmarks(state => state)
 	const itemBs = itemsBs.find(obj => obj.id === id)
 	const addedBs = itemBs?.addedBs || false
 
-	const dispatch = useAppDispatch()
+	// const dispatch = useAppDispatch()
 
 	const pushItemCart = (id: string) => {
 		const item: SneakersItem = {
@@ -31,11 +25,11 @@ const FullSneakerCard: React.FC<SneakersItem> = ({ id, img, title, price }) => {
 			title,
 			price,
 		}
-		dispatch(setTotalPrice(totalPrice + price))
-		dispatch(setItemsCart(item))
+		setTotalPrice(totalPrice + price)
+		setItemsCart(item)
 		if (itemsCart.find(obj => obj.id === id)) {
-			dispatch(deleteItemCart(id))
-			dispatch(setTotalPrice(totalPrice - price))
+			deleteItemCart(id)
+			setTotalPrice(totalPrice - price)
 		}
 	}
 
@@ -46,9 +40,9 @@ const FullSneakerCard: React.FC<SneakersItem> = ({ id, img, title, price }) => {
 			title,
 			price,
 		}
-		dispatch(setItemsBs(item))
+		setItemsBs(item)
 		if (itemsBs.find(obj => obj.id === id)) {
-			dispatch(deleteItemBs(id))
+			deleteItemBs(id)
 		}
 	}
 
@@ -159,7 +153,6 @@ const FullSneakerCard: React.FC<SneakersItem> = ({ id, img, title, price }) => {
 					</button>
 				</div>
 			</div>
-			
 		</li>
 	)
 }

@@ -1,20 +1,17 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
-import { useAppDispatch } from '../../hooks/useAppDispatch'
-import { setInputValue } from '../../redux/sneakers/slice'
 import search from '../../assets/search.svg'
-import { selectSneakers } from '../../redux/sneakers/selectors'
+import { useSneakers } from '../../store'
 
 const SneakersInput: React.FC = () => {
-	const { inputValue } = useSelector(selectSneakers)
-	const dispatch = useAppDispatch()
+	const inputValue = useSneakers(state => state.inputValue)
+	const setInputValue = useSneakers(state => state.setInputValue)
 
 	const inputRef = React.useRef<HTMLInputElement>(null)
 	const onChangeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
-		dispatch(setInputValue(e.target.value))
+		setInputValue(e.target.value)
 	}
 	const clearInput = () => {
-		dispatch(setInputValue(''))
+		setInputValue('')
 		inputRef.current?.focus() // выполняется только в том случае если inputRef не вернет null, и таким образом после очистки input, фокус не будет слетать
 	}
 	return (

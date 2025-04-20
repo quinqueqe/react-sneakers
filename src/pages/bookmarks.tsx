@@ -1,12 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux'
-import { selectBookmarks } from '../redux/bookmarks/selectors'
 import SneakersCard from '../components/sneakers/sneakersCard'
 import BookmarksEmpty from '../components/bookmarksEmpty'
+import { SneakersItem, useBookmarks } from '../store'
 
 const Bookmarks: React.FC = () => {
-	const { itemsBs } = useSelector(selectBookmarks)
+	const itemsBs = useBookmarks(state => state.itemsBs)
 	return (
 		<div className='bookmarks sect container sectMain'>
 			{itemsBs.length === 0 ? (
@@ -36,8 +35,8 @@ const Bookmarks: React.FC = () => {
 						<h3>Мои закладки</h3>
 					</div>
 					<ul className='bookmarks-content'>
-						{itemsBs.map((item, i) => (
-							<SneakersCard {...item} />
+						{itemsBs.map((item: SneakersItem, i: number) => (
+							<SneakersCard key={i} {...item} />
 						))}
 					</ul>
 				</>

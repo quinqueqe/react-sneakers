@@ -1,30 +1,31 @@
 import React from 'react'
-import { SneakersItem } from '../../redux/sneakers/types'
-import { useAppDispatch } from '../../hooks/useAppDispatch'
-import { deleteItemCart } from '../../redux/cart/slice'
 import { Link } from 'react-router-dom'
-import { fetchSneaker } from '../../redux/fullSneaker/asyncActions'
+import { SneakersItem, useCart, useFullSneaker } from '../../store'
 
 const CartItem: React.FC<SneakersItem> = ({ id, img, title, price }) => {
-	const dispatch = useAppDispatch()
+	const deleteItemCart = useCart(state => state.deleteItemCart)
+	const fetchSneaker = useFullSneaker(state => state.fetchSneaker)
 	const pushItemFullSs = (id: string) => {
-			const item = {
-				id,
-				img,
-				title,
-				price,
-			}
-			dispatch(fetchSneaker(item))
+		const item = {
+			id,
+			img,
+			title,
+			price,
 		}
+		fetchSneaker(item)
+	}
 	return (
 		<li className='cart-item'>
-			<Link onClick={() => {
+			<Link
+				onClick={() => {
 					window.scrollTo({
 						top: 0,
 						behavior: 'smooth', // Плавная прокрутка
 					})
 					pushItemFullSs(id)
-				}} to={`/react-sneakers/sneaker/${id}`}>
+				}}
+				to={`/react-sneakers/sneaker/${id}`}
+			>
 				<img src={img} alt='img' />
 			</Link>
 			<div>
@@ -36,7 +37,7 @@ const CartItem: React.FC<SneakersItem> = ({ id, img, title, price }) => {
 			<button
 				onClick={() => {
 					if (window.confirm('Вы действительно хотите удалить этот товар?')) {
-						dispatch(deleteItemCart(id))
+						deleteItemCart(id)
 					}
 				}}
 			>

@@ -2,11 +2,11 @@ import React from 'react'
 import './header.scss'
 import logo from '../../assets/logo.svg'
 import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux'
-import { selectCart } from '../../redux/cart/selectors'
+import { useCart } from '../../store'
+
 
 const Header: React.FC = () => {
-	const { totalPrice } = useSelector(selectCart)
+	const totalPrice = useCart(state => state.totalPrice)
 	return (
 		<header className='header containerHeader sect'>
 			<Link to='/react-sneakers' className='header-left'>
